@@ -8,6 +8,7 @@ Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
 
 " Visuals
 Plug 'itchyny/lightline.vim'
@@ -34,6 +35,8 @@ let g:seoul256_srgb = 1
 let g:seoul256_background = 233
 
 colorscheme material
+
+nnoremap <C-t> :tabnew<CR>
 
 " Conquer Of Completion . NeoVIM
 inoremap <silent><expr> <TAB>
@@ -89,9 +92,12 @@ let g:lightline = { 'colorscheme': 'material_vim' }
 
 " ALE
 let g:ale_fix_on_save = 1
-let b:ale_fixers = {
+let g:ale_fixers = {
 			\'*': ['remove_trailing_lines', 'trim_whitespace'],
 			\'javascript': ['prettier', 'eslint'],
 			\'typescript': ['prettier', 'eslint'],
 			\'rust':       ['rustfmt']
 			\}
+
+" CtrlP
+nnoremap <C-Space> :CtrlP<CR>
